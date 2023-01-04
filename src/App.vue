@@ -10,6 +10,11 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/shop">Shop</RouterLink>
       </nav>
+      <nav class="end">
+        <RouterLink to="/cart">Cart</RouterLink>
+        <RouterLink to="/login">Login</RouterLink>
+        <RouterLink to="/register">Register</RouterLink>
+      </nav>
   </header>
   <RouterView />
 </template>
@@ -75,4 +80,6 @@ nav a:first-of-type {
     padding: 1rem 0rem;
   }
 }
+ /* Transition appear text from bottom */
+
 </style>
