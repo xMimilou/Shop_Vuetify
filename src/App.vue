@@ -5,20 +5,12 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/shop">Shop</RouterLink>
       </nav>
-    </div>
   </header>
-  <v-btn>
-  Button
-</v-btn>
   <RouterView />
 </template>
 
@@ -26,18 +18,21 @@ import HelloWorld from './components/HelloWorld.vue'
 header {
   line-height: 1.5;
   max-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
 
 nav {
   width: 100%;
   font-size: 12px;
   text-align: center;
-  margin-top: 2rem;
+  display: flex;
+}
+
+nav.end{
+  justify-content: flex-end;
 }
 
 nav a.router-link-exact-active {
@@ -60,9 +55,9 @@ nav a:first-of-type {
 
 @media (min-width: 1024px) {
   header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+    float: left;
+    width: 100%;
+
   }
 
   .logo {
@@ -70,18 +65,14 @@ nav a:first-of-type {
   }
 
   header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+    width: 100%;
   }
 
   nav {
     text-align: left;
-    margin-left: -1rem;
     font-size: 1rem;
 
-    padding: 1rem 0;
-    margin-top: 1rem;
+    padding: 1rem 0rem;
   }
 }
 </style>
